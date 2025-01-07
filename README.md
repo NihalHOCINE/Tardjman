@@ -33,3 +33,5 @@ Before running the application, make sure to set up the environment and install 
    Make sure to install the required Python libraries by running the following command:
    ```bash
    pip install -r requirements.txt
+   
+![App Interface](static/interface.png)
