@@ -1,6 +1,6 @@
-# Tarjman - Arabic to Darija Translation App
+# Tarجman  - Arabic to Darija Translation App -ترجم بالطبَع و الشّان-
 
-**Tarjman** is a web application designed to translate Arabic sentences into Algerian Darija. It provides a simple and efficient way to interact with the translation model, where users can input Arabic sentences and receive the corresponding translation in Darija.
+**Tarجman** is a web application designed to translate Arabic sentences into Algerian Darija. It provides a simple and efficient way to interact with the translation model, where users can input Arabic sentences and receive the corresponding translation in Darija.
 
 ## Features
 - Input an Arabic sentence and get its translation in Darija.
