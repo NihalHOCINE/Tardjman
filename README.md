@@ -17,3 +17,19 @@ Before running the application, make sure to set up the environment and install 
    ```bash
    git clone https://github.com/yourusername/tarjman.git
    cd tarjman
+2. **Set up a virtual environment (optional but recommended):**
+   - For Linux/Mac:
+     ```bash
+     python3 -m venv venv
+     source venv/bin/activate
+     ```
+   - For Windows:
+     ```bash
+     python -m venv venv
+     .\venv\Scripts\activate
+     ```
+
+3. **Install the dependencies:**
+   Make sure to install the required Python libraries by running the following command:
+   ```bash
+   pip install -r requirements.txt
