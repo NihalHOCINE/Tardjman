@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarجman Translation</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1><img src="/static/assets/logo.png" alt="Tarjman Logo" class="logo"></h1>
+        <h2>ترجم بالطبَع و الشّان</h2>
+    </header>
+
+    <section id="translator" class="translator">
+        <form method="POST">
+            <div class="language-switcher">
+                <div class="language">
+                    <img src="/static/assets/dz_flag.png" alt="Algerian Dialect">
+                    <span>Algerian Dialect</span>
+                </div>
+                <button type="button" class="switch-button">&#x21c4;</button>
+                <div class="language">
+                    <img src="/static/assets/sa_flag.png" alt="Modern Standard Arabic">
+                    <span>Arabic</span>
+                </div>
+            </div>
+
+            <textarea id="input-text" name="sentence" placeholder="Enter text to translate here...">{{ input_sentence }}</textarea>
+            <button type="submit">Translate</button>
+        </form>
+
+        <div id="output-text" class="output">
+            <p><strong>Translation:</strong> {{ output_text }}</p>
+        </div>
+    </section>
+</body>
+</html>

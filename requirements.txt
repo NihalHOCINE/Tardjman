@@ -1,0 +1,6 @@
+Flask==2.0.2
+torch==2.5.1
+transformers==4.10.0
+huggingface_hub==0.0.19
+#add sentencepiece
+sentencepiece==0.1.96

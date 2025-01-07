@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation App</title>
+</head>
+<body>
+    <h1>Darija to MSA Translation</h1>
+    
+    <!-- Translation form -->
+    <form method="POST">
+        <label for="sentence">Enter a sentence in Darija:</label><br>
+        <input type="text" id="sentence" name="sentence" value="{{ input_sentence }}" required><br><br>
+        <input type="submit" value="Translate">
+    </form>
+
+    {% if output_text %}
+        <h3>Translated Sentence:</h3>
+        <p>{{ output_text }}</p>
+    {% endif %}
+    
+</body>
+</html>
