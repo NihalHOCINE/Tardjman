@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjman Translation</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    
+    <!-- Add FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><img src="/static/assets/logo.png" alt="Tarjman Logo" class="logo"></h1>
+        <h2>ترجم بالطبَع و الشّان</h2>
+    </header>
+
+    <section id="translator" class="translator">
+        <form method="POST">
+            <div class="language-switcher">
+                <div class="language">
+                    <img src="/static/assets/dz_flag.png" alt="Algerian Dialect">
+                    <span style="margin-left: 10px;"></span>
+                    <span>اللهجة الجزائرية</span>
+                </div>
+                <!-- Dropdown Menu for Model Selection -->
+                <select id="model" name="model">
+                    {% for model in models %}
+                        <option value="{{ model.key }}" {% if selected_model == model.key %}selected{% endif %}>
+                            {{ model.name }}
+                        </option>
+                    {% endfor %}
+                </select>
+                <div class="language">
+                    <img src="/static/assets/sa_flag.png" alt="Modern Standard Arabic">
+                    <span style="margin-left: 10px;"></span>
+                    <span>العربية الفصحى</span>
+                </div>
+            </div>
+            
+            <textarea style="width: 700px;" id="input-text" name="sentence" placeholder="أدخل النص للترجمة هنا...">{{ input_sentence }}</textarea>
+
+            <div class="interaction-container">
+                <button type="submit" class="translate-button">ترجم</button>
+                <button type="button" class="speak-button" onclick="speakText('input-text')" title="Listen to Input">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+            </div>
+        </form>
+
+        <div id="output-text" class="output">
+            <p><strong> الترجمة</strong>  
+                <span style="margin-left: 10px;"></span>
+                {{ output_text }}</p>
+            <!-- Like and Dislike buttons with icons -->
+            <div class="feedback-buttons">
+                <button class="like" onclick="handleFeedback(1)">
+                    <i class="fas fa-thumbs-up"></i>
+                </button>
+                <button class="dislike" onclick="handleFeedback(0)">
+                    <i class="fas fa-thumbs-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="static\javascript.js" ></script>
+    <script>
+        // JavaScript function to handle feedback
+        function handleFeedback(rating) {
+            const inputText = document.getElementById("input-text").value;
+            const outputText = document.querySelector("#output-text p").innerText.replace("الترجمة: ", "");
+
+            // Send feedback to the server
+            fetch("/save_feedback", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    input_sentence: inputText,
+                    output_sentence: outputText,
+                    rating: rating,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("شكرًا على تقييمك!");
+                } else {
+                    alert("حدث خطأ أثناء حفظ التقييم.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+    </script>
+</body>
+</html>

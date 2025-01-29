@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f5f5f5;
+    direction: rtl;
+    text-align: right;
+    color: #333;
+}
+
+header {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #006633;
+}
+
+header h1 {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header h1 .logo {
+    height: 300px;
+    width: auto;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+.translator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.translator textarea {
+    width: 80%;
+    max-width: 600px;
+    height: 150px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.translator button[type="submit"] {
+    background-color: #006633;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.translator button[type="submit"]:hover {
+    background-color: #004d26;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.language img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+}
+
+#model {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333;
+    cursor: pointer;
+    margin: 0 1rem;
+    font-family: 'Tajawal', sans-serif;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006633'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 12px auto;
+    padding-right: 2rem;
+}
+
+#model:hover,
+#model:focus {
+    border-color: #006633;
+    outline: none;
+}
+
+#model option {
+    background-color: #ffffff;
+    color: #333;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.output {
+    margin-top: 1rem;
+    width: 80%;
+    max-width: 600px;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.feedback-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+.feedback-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: transparent;
+    color: #666;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.feedback-buttons button.like:hover {
+    background-color: rgba(0, 102, 51, 0.1);
+    color: #006633;
+}
+
+.feedback-buttons button.dislike:hover {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+}
+
+.feedback-buttons button i {
+    margin-right: 5px;
+}
+
+
+.interaction-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.speak-button, .translate-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.speak-button {
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+}
+
+.translate-button {
+    background-color: #008CBA;
+    color: white;
+    border-radius: 5px;
+}
+
+.speak-button i {
+    margin-right: 5px;
+}
+
