@@ -34,4 +34,4 @@ Before running the application, make sure to set up the environment and install 
    ```bash
    pip install -r requirements.txt
    
-![App Interface](static/interface.png)
+![App Interface](static/tarjman_platform_test.png)
