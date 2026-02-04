@@ -4,7 +4,7 @@ import torch
 from huggingface_hub import login
 
 # Authenticate Hugging Face account
-login("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")  # Replace with your token
+login("tkn")  # Replace with your token
 
 app = Flask(__name__)
 
